@@ -2,6 +2,8 @@
 
 A react component for highlight words, supports custom className, tagName and other attributes.
 
+demo: http://highlighter.meiling.fun/
+
 ## Installation
 
 ```
@@ -105,5 +107,5 @@ const App = () => {
 | word | string[] | false | The highlighting words |
 | caseSensitive | boolean | false | Case sensitivity. The default value is false |
 | className | string | true | The className will be added the highlighting node |
-| tagName | string | false | The highlighting node Html TagName, The default value is span |
+| tagName | string | false | The highlighting node Html TagName. The default value is span |
 | getAttributes | (text: string) => any | false | Setting highlighting node with highlighting content |

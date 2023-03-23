@@ -1,5 +1,6 @@
 import Highlighter from 'react-dynamic-highlighter';
 import './App.css';
+import CodeIcon from './code-icon';
 import logData from './log-data';
 
 function App() {
@@ -7,7 +8,16 @@ function App() {
     <div className="App">
       <h1>Demo</h1>
       <section>
-        <h2>simple usage</h2>
+        <h2>
+          simple usage
+          <a
+            className="code-link"
+            href="https://github.com/hmilin/react-dynamic-highlighter#simple"
+            target="__blank"
+          >
+            <CodeIcon />
+          </a>
+        </h2>
         <Highlighter
           rules={[
             {
@@ -21,7 +31,16 @@ function App() {
         </Highlighter>
       </section>
       <section>
-        <h2>custom React children</h2>
+        <h2>
+          custom React children
+          <a
+            className="code-link"
+            href="https://github.com/hmilin/react-dynamic-highlighter#custom-react-children"
+            target="__blank"
+          >
+            <CodeIcon />
+          </a>
+        </h2>
         <Highlighter
           rules={[
             {
@@ -48,6 +67,13 @@ function App() {
             <code>{logData}</code>
           </pre>
         </Highlighter>
+      </section>
+      <section>
+        <h2>
+          <a href="https://github.com/hmilin/react-dynamic-highlighter#props" target="__blank">
+            API
+          </a>
+        </h2>
       </section>
     </div>
   );
