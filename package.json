@@ -1,11 +1,16 @@
 {
   "name": "react-dynamic-highlighter",
   "version": "0.0.1",
+	"license": "MIT",
   "description": "A react component for highlight words supports custom className, tagName and other attributes.",
   "type": "module",
   "files": [
     "dist"
   ],
+	"repository": {
+    "type": "git",
+    "url": "https://github.com/hmilin/react-dynamic-highlighter"
+  },
   "exports": {
     ".": {
       "import": "./dist/index.js",
