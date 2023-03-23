@@ -16,6 +16,8 @@ $ npm install --save react-dynamic-highlighter
 
 ```typescript
 import React from 'react';
+import Highlighter from 'react-dynamic-highlighter';
+
 const App = () => {
   return (
     <div>
@@ -44,32 +46,39 @@ const App = () => {
 ### custom React children
 
 ```typescript
-<Highlighter
-  rules={[
-    {
-      word: ['warning', 'WARNING', 'Warning'],
-      className: 'log-display-warning',
-    },
-    {
-      regexp: /err(or)?/gi,
-      className: 'log-display-error',
-    },
-    {
-      regexp: /(http(s){0,1}:\/\/)([\S]+)/gi,
-      tagName: 'a',
-      className: 'log-link',
-      getAttributes: (text) => ({
-        href: text,
-        target: '__blank',
-        rel: 'noopener noreferrer',
-      }),
-    },
-  ]}
->
-  <pre className="log-display-container">
-    <code>{logData}</code>
-  </pre>
-</Highlighter>
+import React from 'react';
+import Highlighter from 'react-dynamic-highlighter';
+
+const App = () => {
+  return (
+    <Highlighter
+      rules={[
+        {
+          word: ['warning', 'WARNING', 'Warning'],
+          className: 'log-display-warning',
+        },
+        {
+          regexp: /err(or)?/gi,
+          className: 'log-display-error',
+        },
+        {
+          regexp: /(http(s){0,1}:\/\/)([\S]+)/gi,
+          tagName: 'a',
+          className: 'log-link',
+          getAttributes: (text) => ({
+            href: text,
+            target: '__blank',
+            rel: 'noopener noreferrer',
+          }),
+        },
+      ]}
+    >
+      <pre className="log-display-container">
+        <code>{logData}</code>
+      </pre>
+    </Highlighter>
+  );
+};
 ```
 
 ```css
