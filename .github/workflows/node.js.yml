@@ -14,11 +14,6 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [14.x, 16.x, 18.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
     - uses: actions/checkout@v3
     - name: Use Node.js 18.x
@@ -26,14 +21,12 @@ jobs:
       with:
         node-version: 18.x
         cache: 'npm'
-    - name: Install pnpm
-      run: curl -f https://get.pnpm.io/v6.16.js | node - add --global pnpm@7 && pnpm config set store-dir .pnpm-store
         
     - name: Install my packages
-      run: pnpm install --no-optional
+      run: npm ci
       
     - name: Build my App
-      run: pnpm build:demo && touch ./dist/.nojekyll
+      run: npm run build:demo && touch ./dist/.nojekyll
       
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@v4.3.3
